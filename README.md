@@ -1,4 +1,5 @@
-cbtools
+
+ls
 =======
 
 Tools for doing things with comic book archive files
@@ -14,28 +15,25 @@ Requirements
 - libtiff-tools (specifically tiff2pdf)
 
 ### Format-specific Conditional Requirements
+
 These are _only_ required to process archives of these relevant format.
-- cba
--- unace
-- cbr
--- unrar(-free)
-- cbt
--- tar
-- cbz
--- unzip
-- cb7
--- 7zr
+
+- **cba**:    unace
+- **cbr**:    unrar(-free)
+- **cbt**:    tar
+- **cbz**:    unzip
+- **cb7**:    7zr
 
 Usage
 -----
 
-./cbx2pdf.sh /path/to/<comicarchive>.<format>
+./cbx2pdf.sh /path/to/\[comicarchive\].\[format\]
 
 e.g.
     ./cbx2pdf.sh ~/JohnnyTheHomicidalManiacCollection.cbr
 
 produces:
-    /path/to/<comicarchive>.pdf
+    /path/to/\[comicarchive\].pdf
 
 e.g.
     ~/JohnnyTheHomicidalManiacCollection.pdf
@@ -50,4 +48,4 @@ For example:
 
 should produce a message like:
 
-   Specified archive does not exist 
+   Specified archive does not exist
