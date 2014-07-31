@@ -49,7 +49,7 @@ deflate() {
                 emsg="$!"
                 echo "$sadclown_msg:  $emsg" > /dev/stderr
                 echo "$sadclown_msg:  $emsg" >> $log_file
-                exit $exit_code
+                return $exit_code
             else
                 echo $canhas_msg >> $log_file
             fi
@@ -278,7 +278,7 @@ decode_exit() {
     exit_msgs=("Success" "No archive specified" "Specified archive does not exist" "unrar not installed" "Failed to unrar archive" "unzip not installed" "Failed to unzip archive" "tar not installed" "Failed to untar archive" "unace not installed" "Failed to unace archive" "7zr not installed" "Failed to deflate 7zip archive" "imagemagick/convert not installed" "Failed to convert image to TIFF" "libtiff/tiffcp not installed" "Failed to create multi-page TIFF" "libtiff-tools/tiff2pdf not installed" "Failed to create PDF from multi-page TIFF")
     echo ${exit_msgs[$exit_code]}
 }
-
+exit_code=0
 flavor=$(uname -s)
 log_file=$(echo $0 | sed 's/sh/log/')
 case "$1" in
@@ -289,6 +289,7 @@ case "$1" in
     diag*)
         shift
         decode_exit $@
+        exit 0
         ;;
     '')
         deflate
@@ -299,9 +300,30 @@ case "$1" in
 esac
 echo "Processing archive $archive" | tee -a $log_file
 archive_dir=$(deflate $@)
+# can't exit from a function whose output is captured, so have to check return value
+ecode="$?"
+if [ "$ecode" -gt 0 ]
+then
+    exit $ecode
+fi
 tiff_list=($(make_tiffs $archive_dir))
+ecode="$?"
+if [ "$ecode" -gt 0 ]
+then
+    exit $ecode
+fi
 mptiff=$(make_multipage_tiff ${tiff_list[@]})
+ecode="$?"
+if [ "$ecode" -gt 0 ]
+then
+    exit $ecode
+fi
 rm -rf $archive_dir
 pdfname=$(make_pdf $mptiff)
+ecode="$?"
+if [ "$ecode" -gt 0 ]
+then
+    exit $ecode
+fi
 echo "Finished creating $pdfname from archive $archive" | tee -a $log_file
-exit 0
+exit $exit_code
