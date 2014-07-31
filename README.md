@@ -16,7 +16,7 @@ Requirements
 
 ### Format-specific Conditional Requirements
 
-These are _only_ required to process archives of these relevant format.
+These are _only_ required to process archives of the relevant format.
 
 - **cba**:    unace
 - **cbr**:    unrar(-free)
