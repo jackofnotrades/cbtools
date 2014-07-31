@@ -6,26 +6,25 @@ Tools for doing things with comic book archive files
 Requirements
 ------------
 
-A Linux, Unix, or Unix-like environment
-BASH
-file
-ImageMagick (specifically convert)
-libtiff (specifically tiffcp)
-libtiff-tools (specifically tiff2pdf)
+- A Linux, Unix, or Unix-like environment
+- BASH
+- file
+- ImageMagick (specifically convert)
+- libtiff (specifically tiffcp)
+- libtiff-tools (specifically tiff2pdf)
 
 ### Format-specific Conditional Requirements
 These are _only_ required to process archives of these relevant format.
-
-#### cba
-    unace
-#### cbr
-    unrar(-free)
-#### cbt
-    tar
-#### cbz
-    unzip
-#### cb7
-    7zr
+- cba
+-- unace
+- cbr
+-- unrar(-free)
+- cbt
+-- tar
+- cbz
+-- unzip
+- cb7
+-- 7zr
 
 Usage
 -----
