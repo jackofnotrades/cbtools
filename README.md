@@ -3,8 +3,10 @@ cbtools
 
 Tools for doing things with comic book archive files
 
-Requirements
-------------
+cbx2pdf.sh
+----------
+
+### Requirements
 
 - A Linux, Unix, or Unix-like environment
 - BASH
@@ -13,7 +15,7 @@ Requirements
 - libtiff (specifically tiffcp)
 - libtiff-tools (specifically tiff2pdf)
 
-### Format-specific Conditional Requirements
+#### Format-specific Conditional Requirements
 
 These are _only_ required to process archives of the relevant format.
 
@@ -23,8 +25,7 @@ These are _only_ required to process archives of the relevant format.
 - **cbz**:    unzip
 - **cb7**:    7zr
 
-Usage
------
+### Usage
 
 ./cbx2pdf.sh /path/to/\[comicarchive\].\[format\]
 
@@ -37,7 +38,7 @@ produces:
 e.g.
     ~/JohnnyTheHomicidalManiacCollection.pdf
 
-### Advanced Usage
+#### Advanced Usage
 
 This script knows about its own error codes.  By running it in an OR'd condition, it can report the cause of its errors.
 
