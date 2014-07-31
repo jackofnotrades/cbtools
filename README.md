@@ -27,7 +27,7 @@ These are _only_ required to process archives of the relevant format.
 
 ### Usage
 
-        ./cbx2pdf.sh /path/to/\[comicarchive\].\[format\]
+        ./cbx2pdf.sh /path/to/<comicarchive>.<format>
 
 e.g.
     
@@ -35,7 +35,7 @@ e.g.
 
 produces:
 
-        /path/to/\[comicarchive\].pdf
+        /path/to/<comicarchive>.pdf
 
 e.g.
 
