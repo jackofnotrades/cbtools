@@ -48,4 +48,4 @@ For example:
 
 should produce a message like:
 
-   Specified archive does not exist
+        Specified archive does not exist
