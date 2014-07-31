@@ -27,16 +27,19 @@ These are _only_ required to process archives of the relevant format.
 
 ### Usage
 
-./cbx2pdf.sh /path/to/\[comicarchive\].\[format\]
+        ./cbx2pdf.sh /path/to/\[comicarchive\].\[format\]
 
 e.g.
-    ./cbx2pdf.sh ~/JohnnyTheHomicidalManiacCollection.cbr
+    
+        ./cbx2pdf.sh ~/JohnnyTheHomicidalManiacCollection.cbr
 
 produces:
-    /path/to/\[comicarchive\].pdf
+
+        /path/to/\[comicarchive\].pdf
 
 e.g.
-    ~/JohnnyTheHomicidalManiacCollection.pdf
+
+        ~/JohnnyTheHomicidalManiacCollection.pdf
 
 #### Advanced Usage
 
